@@ -10,8 +10,9 @@ const AppName = "mall-api"
 func main() {
 	application := &vars.WEBApplication{
 		Application: &vars.Application{
-			Name: AppName,
+			Name:       AppName,
 			LoadConfig: startup.LoadConfig,
+			SetupVars:  startup.SetupVars,
 		},
 	}
 }
