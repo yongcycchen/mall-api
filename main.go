@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/yongcycchen/mall-api/app"
 	"github.com/yongcycchen/mall-api/startup"
 	"github.com/yongcycchen/mall-api/vars"
 )
@@ -13,6 +14,10 @@ func main() {
 			Name:       AppName,
 			LoadConfig: startup.LoadConfig,
 			SetupVars:  startup.SetupVars,
+			StopFunc:   startup.SetStopFunc,
 		},
+		RegisterHttpRoute: startup.RegisterHttpRoute,
+		RegisterTaks:      startup.RegisterTasks,
 	}
+	app.RunApplication(application)
 }

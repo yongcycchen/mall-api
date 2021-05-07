@@ -52,3 +52,20 @@ func SetupVars() error {
 	vars.GPool = goroutine.NewPool(20, 1000)
 	return nil
 }
+
+func SetStopFunc() (err error) {
+	if vars.GPool != nil {
+		vars.GPool.Release()
+		vars.GPool.WaitAll()
+	}
+	if vars.G2CacheEngine != nil {
+		vars.G2CacheEngine.Close()
+	}
+	if vars.RedisPoolMicroMall != nil {
+		err = vars.RedisPoolMicroMall.Close()
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
