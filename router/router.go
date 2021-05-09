@@ -31,6 +31,6 @@ func InitRouter(accessInfoLogger, accessErrLogger io.Writer) *gin.Engine {
 	//???什么意思
 	apiG := r.Group("/api")
 	apiV1 := apiG.Group("/v1")
-	apiV1.POST("/verify_code/send")
+	apiV1.POST("/verify_code/send",v1.GetVerifyCodeApi)
 	return r
 }
