@@ -7,6 +7,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const (
+	Version    = "1.0.0"
+	AppTypeWeb = 1
+)
+
 type Application struct {
 	Name       string
 	Type       int32
@@ -24,7 +29,7 @@ type WEBApplication struct {
 	// RegisterHttpRoute
 	RegisterHttpRoute func() *gin.Engine
 	// Tasks
-	RegisterTaks func() []CronTask
+	RegisterTasks func() []CronTask
 }
 
 type ListenerApplication struct {

@@ -12,7 +12,6 @@ import (
 
 func IndexApi(c *gin.Context) {
 	app.JsonResponse(c, http.StatusOK, code.SUCCESS, "Welcome to "+vars.App.Name)
-	return
 }
 
 func PingApi(c *gin.Context) {
