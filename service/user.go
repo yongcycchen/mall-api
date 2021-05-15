@@ -44,6 +44,7 @@ func GenVerifyCode(ctx context.Context, req *args.GenVerifyCodeArgs) (retCode in
 		err     error
 		limiter = new(repository.CheckVerifyCodeMapCacheLimiter)
 	)
+	fmt.Printf("check 1\n")
 	limitKey := fmt.Sprintf("%s%s", req.CountryCode, req.Phone)
 	limitRetCode, limitCount := checkVerifyCodeLimit(limiter, limitKey, vars.VerifyCodeSetting.SendPeriodLimitCount)
 	if limitRetCode != code.SUCCESS {
@@ -51,13 +52,16 @@ func GenVerifyCode(ctx context.Context, req *args.GenVerifyCodeArgs) (retCode in
 		retCode = limitRetCode
 		return
 	}
+	fmt.Printf("check 2\n")
 	serverName := args.RpcServiceMallUsers
 	conn, err := util.GetGrpcClient(serverName)
+	fmt.Printf("check 3\n")
 	if err != nil {
 		vars.ErrorLogger.Errorf(ctx, "GetGrpcClient %v,err: %v", serverName, err)
 		retCode = code.ERROR
 		return
 	}
+	fmt.Printf("check 4\n")
 	defer conn.Close()
 	client := users.NewUsersServiceClient(conn)
 	userReq := &users.GetUserInfoByPhoneRequest{

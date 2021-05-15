@@ -17,7 +17,7 @@ func main() {
 			StopFunc:   startup.SetStopFunc,
 		},
 		RegisterHttpRoute: startup.RegisterHttpRoute,
-		RegisterTaks:      startup.RegisterTasks,
+		RegisterTasks:     startup.RegisterTasks,
 	}
 	app.RunApplication(application)
 }

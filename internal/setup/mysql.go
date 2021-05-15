@@ -12,6 +12,7 @@ import (
 	"github.com/yongcycchen/mall-api/config/setting"
 	"xorm.io/xorm"
 	xormLog "xorm.io/xorm/log"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 // NewMySQL returns *xorm.DB instance.

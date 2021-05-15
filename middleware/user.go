@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/yongcycchen/mall-api/pkg/app"
 	"github.com/yongcycchen/mall-api/pkg/code"
+	"github.com/yongcycchen/mall-api/pkg/util"
 )
 
 func CheckUserToken() gin.HandlerFunc {

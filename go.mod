@@ -16,7 +16,7 @@ require (
 	github.com/astaxie/beego v1.12.3
 	github.com/aws/aws-sdk-go v1.38.36 // indirect
 	github.com/bluele/gcache v0.0.2 // indirect
-	github.com/cloudflare/tableflip v1.2.2 // indirect
+	github.com/cloudflare/tableflip v1.2.2
 	github.com/coocood/freecache v1.1.1 // indirect
 	github.com/coreos/etcd v3.3.25+incompatible // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
@@ -32,6 +32,7 @@ require (
 	github.com/go-playground/validator/v10 v10.6.0 // indirect
 	github.com/go-redis/redis/v8 v8.8.2 // indirect
 	github.com/go-redsync/redsync/v4 v4.3.0 // indirect
+	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gogap/errors v0.0.0-20200228125012-531a6449b28c // indirect
 	github.com/gogap/stack v0.0.0-20150131034635-fef68dddd4f8 // indirect
 	github.com/golang/glog v0.0.0-20210429001901-424d2337a529 // indirect
@@ -51,7 +52,7 @@ require (
 	github.com/prometheus/client_golang v1.10.0
 	github.com/prometheus/common v0.23.0 // indirect
 	github.com/qiniu/qmgo v0.9.3 // indirect
-	github.com/robfig/cron/v3 v3.0.1 // indirect
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/rs/zerolog v1.21.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
 	github.com/shirou/gopsutil v3.20.10+incompatible // indirect

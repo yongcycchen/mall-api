@@ -15,7 +15,7 @@ import (
 )
 
 type KProcess struct {
-	pidFile string
+	pidFile   string
 	processUp *tableflip.Upgrader
 }
 
@@ -23,7 +23,7 @@ type KProcess struct {
 // with the graceful shutdown facilities of net/http.
 func (k *KProcess) Listen(network, addr, pidFile string) (ln net.Listener, err error) {
 	log.Printf(fmt.Sprintf("[info] exec process pid %d \n", os.Getpid()))
-
+	// log.Printf()
 	k.processUp, err = tableflip.New(tableflip.Options{
 		UpgradeTimeout: 500 * time.Millisecond,
 		PIDFile:        pidFile,

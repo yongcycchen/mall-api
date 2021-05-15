@@ -27,9 +27,10 @@ const (
 // cfg reads file app.ini.
 var (
 	cfg      *ini.File
-	flagConf = flag.String("conf_file", "", "Set app config.")
+	flagConf = flag.String("conf_app", "", "Set app config.")
 )
 
+// LoadDefaultConfig loads config form cfg.
 func LoadDefaultConfig(application *vars.Application) error {
 	// Setup cfg object
 	flag.Parse()
@@ -66,6 +67,7 @@ func LoadDefaultConfig(application *vars.Application) error {
 	return nil
 }
 
+// MapConfig uses cfg to map config.
 func MapConfig(section string, v interface{}) {
 	sec, err := cfg.GetSection(section)
 	if err != nil {

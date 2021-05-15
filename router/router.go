@@ -35,9 +35,9 @@ func InitRouter(accessInfoLogger, accessErrLogger io.Writer) *gin.Engine {
 	apiV1.POST("/register", v1.RegisterUserApi)                     // register
 	apiV1.POST("/login/verify_code", v1.LoginUserWithVerifyCodeApi) // verify code login
 	apiV1.POST("/login/pwd", v1.LoginUserWithPwdApi)                // password login
-	apiUser := apiV1.Group("/user")
-	apiUser.Use(middleware.CheckUserToken())
-	{
-	}
+	// apiUser := apiV1.Group("/user")
+	// apiUser.Use(middleware.CheckUserToken())
+	// {
+	// }
 	return r
 }
