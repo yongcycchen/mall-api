@@ -17,7 +17,7 @@ require (
 	github.com/aws/aws-sdk-go v1.38.36 // indirect
 	github.com/bluele/gcache v0.0.2 // indirect
 	github.com/cloudflare/tableflip v1.2.2
-	github.com/coocood/freecache v1.1.1 // indirect
+	github.com/coocood/freecache v1.1.1
 	github.com/coreos/etcd v3.3.25+incompatible // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -44,16 +44,16 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.4.0
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/jinzhu/gorm v1.9.16
-	github.com/json-iterator/go v1.1.11 // indirect
+	github.com/json-iterator/go v1.1.11
 	github.com/jteeuwen/go-bindata v3.0.7+incompatible // indirect
 	github.com/klauspost/compress v1.12.2 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
-	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
+	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826
 	github.com/prometheus/client_golang v1.10.0
 	github.com/prometheus/common v0.23.0 // indirect
 	github.com/qiniu/qmgo v0.9.3 // indirect
 	github.com/robfig/cron/v3 v3.0.1
-	github.com/rs/zerolog v1.21.0 // indirect
+	github.com/rs/zerolog v1.21.0
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
 	github.com/shirou/gopsutil v3.20.10+incompatible // indirect
 	github.com/ugorji/go v1.2.5 // indirect
@@ -61,7 +61,7 @@ require (
 	github.com/xdg/scram v1.0.3 // indirect
 	github.com/xdg/stringprep v1.0.3 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
-	go.elastic.co/apm v1.11.0 // indirect
+	go.elastic.co/apm v1.11.0
 	go.mongodb.org/mongo-driver v1.5.2 // indirect
 	go.opentelemetry.io/otel v0.20.0 // indirect
 	golang.org/x/crypto v0.0.0-20210506145944-38f3c27a63bf // indirect

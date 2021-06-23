@@ -3,8 +3,8 @@ package setup
 import (
 	"fmt"
 
-	"gitee.com/kelvins-io/g2cache"
 	"github.com/yongcycchen/mall-api/config/setting"
+	"github.com/yongcycchen/mall-api/g2cache"
 )
 
 func NewG2Cache(g2cacheSetting *setting.G2CacheSettingS, out g2cache.OutCache, local g2cache.LocalCache) (*g2cache.G2Cache, error) {

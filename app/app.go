@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"gitee.com/kelvins-io/common/log"
+	"github.com/yongcycchen/mall-api/common/log"
 	"github.com/yongcycchen/mall-api/internal/logging"
 	"github.com/yongcycchen/mall-api/vars"
 )

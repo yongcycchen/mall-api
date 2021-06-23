@@ -1,7 +1,7 @@
 package startup
 
 import (
-	"gitee.com/kelvins-io/common/log"
+	"github.com/yongcycchen/mall-api/common/log"
 	"github.com/yongcycchen/mall-api/internal/setup"
 	"github.com/yongcycchen/mall-api/pkg/util/goroutine"
 	"github.com/yongcycchen/mall-api/vars"

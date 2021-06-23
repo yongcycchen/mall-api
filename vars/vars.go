@@ -1,11 +1,11 @@
 package vars
 
 import (
-	"gitee.com/kelvins-io/common/log"
-	"gitee.com/kelvins-io/g2cache"
 	"github.com/gomodule/redigo/redis"
 	"github.com/jinzhu/gorm"
+	"github.com/yongcycchen/mall-api/common/log"
 	"github.com/yongcycchen/mall-api/config/setting"
+	"github.com/yongcycchen/mall-api/g2cache"
 	"github.com/yongcycchen/mall-api/pkg/util/goroutine"
 	"xorm.io/xorm"
 )
