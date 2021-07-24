@@ -4,7 +4,7 @@ EndPort = 52001
 ReadTimeout = 10
 WriteTimeout = 10
 IdleTimeout = 10
-PIDFile = "./mall-api.pid"
+PIDFile = "./micro-mall-api.pid"
 
 [web-logger]
 RootPath = "./logs"
@@ -14,17 +14,17 @@ Level = "info"
 Secret = "&WJof0jaY4ByTHR2"
 TokenExpireSecond = 2592000
 
-[mall-verify_code]
+[micro-mall-verify_code]
 ExpireMinute = 100
 SendPeriodLimitCount = 10
 SendPeriodLimitExpireSecond = 3600
 SendIntervalExpireSecond = 60
 
-[mall-mysql]
+[micro-mall-mysql]
 Host = "127.0.0.1:3306"
 UserName = "root"
-Password = "password"
-DBName = "mall"
+Password = "oyuioyuioy"
+DBName = "micro_mall"
 Charset = "utf8mb4"
 PoolNum =  10
 MaxIdleConns = 5
@@ -32,21 +32,21 @@ ConnMaxLifeSecond = 3600
 MultiStatements = true
 ParseTime = true
 
-[mall-redis]
+[micro-mall-redis]
 Host = "127.0.0.1:6379"
-Password = "password"
+Password = "oyuioyiuoyui"
 DB = 1
 PoolNum = 10
 
-[mall-g2cache]
+[micro-mall-g2cache]
 CacheDebug = false
 CacheMonitor = false
 OutCachePubSub = false
 FreeCacheSize = 52428800
-PubSubRedisChannel = "mall-pubsub-channel"
+PubSubRedisChannel = "micro-mall-pubsub-channel"
 RedisConfDSN = "127.0.0.1:6379"
 RedisConfDB = 1
-RedisConfPwd = "password"
+RedisConfPwd = "oyuioyiuoyui"
 RedisConfMaxConn = 30
 
 [email-config]

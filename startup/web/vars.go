@@ -1,4 +1,4 @@
-package startup
+package web
 
 import (
 	"github.com/yongcycchen/mall-api/common/log"

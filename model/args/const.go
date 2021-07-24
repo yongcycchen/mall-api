@@ -99,3 +99,32 @@ func GetMsg(code int) string {
 	}
 	return MsgFlags[Unknown]
 }
+
+type MerchantsMaterialInfo struct {
+	Uid          int64
+	MaterialId   int64
+	RegisterAddr string
+	HealthCardNo string
+	Identity     int32
+	State        int32
+	TaxCardNo    string
+}
+
+type RegisterResult struct {
+	InviteCode string `json:"invite_code"`
+}
+
+const (
+	TaskNameUserRegisterNotice    = "task_user_register_notice"
+	TaskNameUserRegisterNoticeErr = "task_user_register_notice_err"
+
+	TaskNameUserStateNotice    = "task_user_state_notice"
+	TaskNameUserStateNoticeErr = "task_user_state_notice_err"
+)
+
+
+
+const (
+	CacheKeyUserSate = "user_state_"
+)
+

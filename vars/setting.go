@@ -21,3 +21,8 @@ type VerifyCodeSettingS struct {
 	//request to send verification code interval time
 	SendIntervalExpireSecond int64 `json:"send_interval_expire_second"`
 }
+
+type JwtSettingS struct {
+	Secret            string
+	TokenExpireSecond int
+}

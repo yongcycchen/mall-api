@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/yongcycchen/mall-api/app"
-	"github.com/yongcycchen/mall-api/startup"
+	"github.com/yongcycchen/mall-api/startup/web"
 	"github.com/yongcycchen/mall-api/vars"
 )
 
@@ -12,12 +12,12 @@ func main() {
 	application := &vars.WEBApplication{
 		Application: &vars.Application{
 			Name:       AppName,
-			LoadConfig: startup.LoadConfig,
-			SetupVars:  startup.SetupVars,
-			StopFunc:   startup.SetStopFunc,
+			LoadConfig: web.LoadConfig,
+			SetupVars:  web.SetupVars,
+			StopFunc:   web.SetStopFunc,
 		},
-		RegisterHttpRoute: startup.RegisterHttpRoute,
-		RegisterTasks:     startup.RegisterTasks,
+		RegisterHttpRoute: web.RegisterHttpRoute,
+		RegisterTasks:     web.RegisterTasks,
 	}
 	app.RunApplication(application)
 }

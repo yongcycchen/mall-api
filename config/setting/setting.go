@@ -96,3 +96,41 @@ type G2CacheSettingS struct {
 	RedisConfPwd         string
 	RedisConfMaxConn     int
 }
+
+// MallUserGrpcServerSettingS defines for grpc server.
+type GrpcServerSettingS struct {
+	EndPoint             string
+	IsRecordCallResponse bool
+	PIDFile              string
+}
+
+// QueueServerSettingS defines what queue server needs.
+type QueueServerSettingS struct {
+	WorkerConcurrency int
+	CustomQueueList   []string
+}
+
+// AliRocketMQSettingS defines for aliyun RocketMQ queue
+type AliRocketMQSettingS struct {
+	BusinessName string
+	RegionId     string
+	AccessKey    string
+	SecretKey    string
+	InstanceId   string
+	HttpEndpoint string
+}
+
+type MongoDBSettingS struct {
+	Uri         string
+	Username    string
+	Password    string
+	Database    string
+	AuthSource  string
+	MaxPoolSize int
+	MinPoolSize int
+}
+
+type GPoolSettingS struct {
+	WorkerNum  int
+	JobChanLen int
+}

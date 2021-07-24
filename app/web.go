@@ -99,6 +99,7 @@ func runApp(webApp *vars.WEBApplication) error {
 	}
 
 	// 7. run http server
+
 	if webApp.RegisterHttpRoute == nil {
 		logging.Fatalf("App RegisterHttpRoute nil ??")
 	}
@@ -138,5 +139,6 @@ func runApp(webApp *vars.WEBApplication) error {
 		logging.Fatalf("App server Shutdown err: %v", err)
 	}
 	err = appShutdown(webApp.Application)
+
 	return err
 }
