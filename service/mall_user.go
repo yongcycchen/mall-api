@@ -15,6 +15,7 @@ import (
 	"github.com/yongcycchen/mall-api/pkg/code"
 	"github.com/yongcycchen/mall-api/pkg/util"
 	"github.com/yongcycchen/mall-api/pkg/util/cache"
+	"github.com/yongcycchen/mall-api/proto/mall_pay_proto/pay_business"
 	"github.com/yongcycchen/mall-api/proto/mall_users_proto/users"
 	"github.com/yongcycchen/mall-api/repository"
 	"github.com/yongcycchen/mall-api/vars"
@@ -352,17 +353,17 @@ func ModifyUserDeliveryInfo(ctx context.Context, req *users.ModifyUserDeliveryIn
 		}
 		return code.Success
 	} else if req.OperationType == users.OperationType_UPDATE {
-		if req.Info.Id <= 0 {
-			return code.UserDeliveryInfoNotExist
-		}
-		deliveryInfoDB, err := repository.GetUserLogisticsDelivery("id", req.Info.Id)
-		if err != nil {
-			kelvins.ErrLogger.Errorf(ctx, "GetUserLogisticsDelivery err: %v, id: %v", err, req.Info.Id)
-			return code.ErrorServer
-		}
-		if deliveryInfoDB.Id <= 0 {
-			return code.UserDeliveryInfoNotExist
-		}
+		// if req.Info.Id <= 0 {
+		// 	return code.UserDeliveryInfoNotExist
+		// }
+		// deliveryInfoDB, err := repository.GetUserLogisticsDelivery("id", req.Info.Id)
+		// if err != nil {
+		// 	kelvins.ErrLogger.Errorf(ctx, "GetUserLogisticsDelivery err: %v, id: %v", err, req.Info.Id)
+		// 	return code.ErrorServer
+		// }
+		// if deliveryInfoDB.Id <= 0 {
+		// 	return code.UserDeliveryInfoNotExist
+		// }
 		deliveryInfo := &mysql.UserLogisticsDelivery{
 			DeliveryUser: req.Info.DeliveryUser,
 			Phone:        req.Info.MobilePhone,
@@ -594,16 +595,16 @@ func UserAccountCharge(ctx context.Context, req *users.UserAccountChargeRequest)
 
 func CheckUserDeliveryInfo(ctx context.Context, req *users.CheckUserDeliveryInfoRequest) (retCode int) {
 	retCode = code.Success
-	infoList, err := repository.CheckUserLogisticsDelivery(req.Uid, req.DeliveryIds)
-	if err != nil {
-		kelvins.ErrLogger.Errorf(ctx, "AccountCharge err: %v, req: %+v", err, req)
-		retCode = code.ErrorServer
-		return
-	}
-	if len(infoList) != len(req.DeliveryIds) {
-		retCode = code.UserDeliveryInfoNotExist
-		return
-	}
+	// infoList, err := repository.CheckUserLogisticsDelivery(req.Uid, req.DeliveryIds)
+	// if err != nil {
+	// 	kelvins.ErrLogger.Errorf(ctx, "AccountCharge err: %v, req: %+v", err, req)
+	// 	retCode = code.ErrorServer
+	// 	return
+	// }
+	// if len(infoList) != len(req.DeliveryIds) {
+	// 	retCode = code.UserDeliveryInfoNotExist
+	// 	return
+	// }
 	return
 }
 

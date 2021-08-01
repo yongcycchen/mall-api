@@ -253,7 +253,8 @@ type UsersServiceServer interface {
 	GetUserAccountId(context.Context, *GetUserAccountIdRequest) (*GetUserAccountIdResponse, error)
 	// ListUserInfo
 	ListUserInfo(context.Context, *ListUserInfoRequest) (*ListUserInfoResponse, error)
-	mustEmbedUnimplementedUsersServiceServer()
+
+	// mustEmbedUnimplementedUsersServiceServer()
 }
 
 // UnimplementedUsersServiceServer must be embedded to have forward compatible implementations.

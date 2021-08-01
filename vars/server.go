@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/yongcycchen/mall-api/common/event"
 	"github.com/yongcycchen/mall-api/common/log"
 	"google.golang.org/grpc"

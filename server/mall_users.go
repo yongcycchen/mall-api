@@ -5,8 +5,11 @@ import (
 
 	"github.com/yongcycchen/mall-api/common/errcode"
 	"github.com/yongcycchen/mall-api/pkg/code"
+	"github.com/yongcycchen/mall-api/pkg/util"
 	"github.com/yongcycchen/mall-api/proto/mall_users_proto/users"
+	"github.com/yongcycchen/mall-api/service"
 )
+
 type UsersServer struct {
 }
 
@@ -265,20 +268,20 @@ func (u *UsersServer) ModifyUserDeliveryInfo(ctx context.Context, req *users.Mod
 		Code: users.RetCode_SUCCESS,
 		Msg:  "",
 	}}
-	retCode := service.ModifyUserDeliveryInfo(ctx, req)
-	if retCode != code.Success {
-		switch retCode {
-		case code.TransactionFailed:
-			result.Common.Code = users.RetCode_TRANSACTION_FAILED
-		case code.UserDeliveryInfoExist:
-			result.Common.Code = users.RetCode_USER_DELIVERY_INFO_EXIST
-		case code.UserDeliveryInfoNotExist:
-			result.Common.Code = users.RetCode_USER_DELIVERY_INFO_NOT_EXIST
-		case code.ErrorServer:
-			result.Common.Code = users.RetCode_ERROR
-		}
-		return &result, nil
-	}
+	// retCode := service.ModifyUserDeliveryInfo(ctx, req)
+	// if retCode != code.Success {
+	// 	switch retCode {
+	// 	case code.TransactionFailed:
+	// 		result.Common.Code = users.RetCode_TRANSACTION_FAILED
+	// 	case code.UserDeliveryInfoExist:
+	// 		result.Common.Code = users.RetCode_USER_DELIVERY_INFO_EXIST
+	// 	case code.UserDeliveryInfoNotExist:
+	// 		result.Common.Code = users.RetCode_USER_DELIVERY_INFO_NOT_EXIST
+	// 	case code.ErrorServer:
+	// 		result.Common.Code = users.RetCode_ERROR
+	// 	}
+	// 	return &result, nil
+	// }
 	return &result, nil
 }
 
@@ -346,16 +349,16 @@ func (u *UsersServer) CheckUserDeliveryInfo(ctx context.Context, req *users.Chec
 	result := &users.CheckUserDeliveryInfoResponse{Common: &users.CommonResponse{
 		Code: users.RetCode_SUCCESS,
 	}}
-	retCode := service.CheckUserDeliveryInfo(ctx, req)
-	if retCode != code.Success {
-		switch retCode {
-		case code.UserDeliveryInfoNotExist:
-			result.Common.Code = users.RetCode_USER_DELIVERY_INFO_NOT_EXIST
-		default:
-			result.Common.Code = users.RetCode_ERROR
-		}
-		return result, nil
-	}
+	// retCode := service.CheckUserDeliveryInfo(ctx, req)
+	// if retCode != code.Success {
+	// 	switch retCode {
+	// 	case code.UserDeliveryInfoNotExist:
+	// 		result.Common.Code = users.RetCode_USER_DELIVERY_INFO_NOT_EXIST
+	// 	default:
+	// 		result.Common.Code = users.RetCode_ERROR
+	// 	}
+	// 	return result, nil
+	// }
 	return result, nil
 }
 

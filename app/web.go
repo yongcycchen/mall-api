@@ -3,15 +3,18 @@ package app
 import (
 	"context"
 	"fmt"
+	"net"
 	"net/http"
 	"os"
+	"os/signal"
 	"strconv"
+	"syscall"
 	"time"
 
+	"github.com/cloudflare/tableflip"
 	"github.com/robfig/cron/v3"
 	"github.com/yongcycchen/mall-api/internal/config"
 	"github.com/yongcycchen/mall-api/internal/logging"
-	"github.com/yongcycchen/mall-api/pkg/util/kprocess"
 	"github.com/yongcycchen/mall-api/vars"
 )
 
@@ -108,7 +111,7 @@ func runApp(webApp *vars.WEBApplication) error {
 	if vars.ServerSetting.PIDFile != "" {
 		pidFile = vars.ServerSetting.PIDFile
 	}
-	kp := new(kprocess.KProcess)
+	kp := new(KProcess)
 	network := "tcp"
 	if vars.ServerSetting != nil && vars.ServerSetting.Network != "" {
 		network = vars.ServerSetting.Network
@@ -141,4 +144,91 @@ func runApp(webApp *vars.WEBApplication) error {
 	err = appShutdown(webApp.Application)
 
 	return err
+}
+
+type KProcess struct {
+	pidFile   string
+	pid       int
+	processUp *tableflip.Upgrader
+}
+
+// This shows how to use the upgrader
+// with the graceful shutdown facilities of net/http.
+func (k *KProcess) Listen(network, addr, pidFile string) (ln net.Listener, err error) {
+	k.pid = os.Getpid()
+	logging.Infof(fmt.Sprintf("exec process pid %d \n", k.pid))
+
+	k.processUp, err = tableflip.New(tableflip.Options{
+		UpgradeTimeout: 500 * time.Millisecond,
+		PIDFile:        pidFile,
+	})
+	if err != nil {
+		return nil, err
+	}
+	k.pidFile = pidFile
+
+	go k.signal(k.upgrade, k.stop)
+
+	// Listen must be called before Ready
+	if network != "" && addr != "" {
+		ln, err = k.processUp.Listen(network, addr)
+		if err != nil {
+			return nil, err
+		}
+	}
+	if err := k.processUp.Ready(); err != nil {
+		return nil, err
+	}
+
+	return ln, nil
+}
+
+func (k *KProcess) stop() error {
+	if k.processUp != nil {
+		k.processUp.Stop()
+		return os.Remove(k.pidFile)
+	}
+	return nil
+}
+
+func (k *KProcess) upgrade() error {
+	if k.processUp != nil {
+		return k.processUp.Upgrade()
+	}
+	return nil
+}
+
+func (k *KProcess) Exit() <-chan struct{} {
+	if k.processUp != nil {
+		return k.processUp.Exit()
+	}
+	ch := make(chan struct{})
+	close(ch)
+	return ch
+}
+
+func (k *KProcess) signal(upgradeFunc, stopFunc func() error) {
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, syscall.SIGUSR1, syscall.SIGUSR2, syscall.SIGTERM)
+	for s := range sig {
+		switch s {
+		case syscall.SIGTERM:
+			if stopFunc != nil {
+				err := stopFunc()
+				if err != nil {
+					logging.Infof("KProcess exec stopFunc failed:%v\n", err)
+				}
+				logging.Infof("process [%d] stop...\n", k.pid)
+			}
+			return
+		case syscall.SIGUSR1, syscall.SIGUSR2:
+			if upgradeFunc != nil {
+				err := upgradeFunc()
+				if err != nil {
+					logging.Infof("KProcess exec Upgrade failed:%v\n", err)
+				}
+				logging.Infof("process [%d] restart...\n", k.pid)
+			}
+		}
+	}
 }
