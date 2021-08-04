@@ -27,7 +27,9 @@ type MysqlSettingS struct {
 	Password          string
 	DBName            string
 	Charset           string
-	PoolNum           int
+	PoolNum           int // 不建议继续使用，应使用 MaxIdle 和 MaxActive。
+	MaxIdle           int
+	MaxOpen           int
 	Loc               string
 	MaxIdleConns      int
 	ConnMaxLifeSecond int
@@ -37,10 +39,13 @@ type MysqlSettingS struct {
 
 // RedisSettingS defines for connecting redis.
 type RedisSettingS struct {
-	Host     string
-	Password string
-	DB       int
-	PoolNum  int
+	Host        string
+	Password    string
+	PoolNum     int // 不建议继续使用，应使用 MaxIdle 和 MaxActive。
+	MaxIdle     int
+	MaxActive   int
+	IdleTimeout int
+	DB          int
 }
 
 // QueueRedisSettingS defines for redis queue.

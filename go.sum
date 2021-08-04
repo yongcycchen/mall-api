@@ -65,6 +65,7 @@ gitee.com/kelvins-io/common v1.0.2/go.mod h1:oyiyeVd/DMxKLv2pZDlvTWUihXpcoiQ07ej
 gitee.com/kelvins-io/common v1.0.4 h1:l3OC9ZlLhybVHN68lM573lfcTRUNxumNZVVWTSTBnAM=
 gitee.com/kelvins-io/common v1.0.4/go.mod h1:oyiyeVd/DMxKLv2pZDlvTWUihXpcoiQ07ejxYEBPybA=
 gitee.com/kelvins-io/common v1.0.6 h1:QjnWoRuX19og1IAX8mHg1Sm0rc8AvlzSuWRGDb1XYfw=
+gitee.com/kelvins-io/common v1.0.6/go.mod h1:oyiyeVd/DMxKLv2pZDlvTWUihXpcoiQ07ejxYEBPybA=
 gitee.com/kelvins-io/common v1.0.7 h1:tkL8iFwiOW12OKtffkgdLziao0whVub9AOVL6PKETU0=
 gitee.com/kelvins-io/common v1.0.7/go.mod h1:oyiyeVd/DMxKLv2pZDlvTWUihXpcoiQ07ejxYEBPybA=
 gitee.com/kelvins-io/g2cache v4.0.3+incompatible h1:novMyF+9rkzxzq99IGx3+BJoQf5jozkXTSF7pwDOmZc=
@@ -74,6 +75,8 @@ gitee.com/kelvins-io/kelvins v1.2.7 h1:j8NaHCYoc9Rjf7F+9gBnKPbkXWAwfJMJ5H+10EAF2
 gitee.com/kelvins-io/kelvins v1.2.7/go.mod h1:bsooNB8hqJDN+c3dW8ps85zu35wc7Wztcg+eukSqKmI=
 gitee.com/kelvins-io/kelvins v1.2.8 h1:jkPCd5xYNTdnEexf3Jy8eN5q25h2IRcZHwTeoTlyzwI=
 gitee.com/kelvins-io/kelvins v1.2.8/go.mod h1:FMEqj8cE/hxJmUV6O9DbPjDeb47OdhWUyVwN0KYBcw8=
+gitee.com/kelvins-io/kelvins v1.3.6 h1:KG2xgB5gYs2+6Y5zl0jHAF0GzorCpE/IjG149TEa+5M=
+gitee.com/kelvins-io/kelvins v1.3.6/go.mod h1:FMEqj8cE/hxJmUV6O9DbPjDeb47OdhWUyVwN0KYBcw8=
 gitee.com/kelvins-io/service-config v1.0.0/go.mod h1:htuk7Oj0ifRcwgqSJf45IsN1rSq9kEsje/fcQClQS+Y=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"gitee.com/kelvins-io/common/env"
+	"github.com/yongcycchen/mall-api/common/env"
 	"github.com/yongcycchen/mall-api/proto"
 )
 

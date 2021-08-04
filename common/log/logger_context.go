@@ -4,11 +4,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"gitee.com/kelvins-io/common/env"
-	"github.com/rs/zerolog"
 	"os"
 	"runtime"
 	"time"
+
+	"github.com/rs/zerolog"
+	"github.com/yongcycchen/mall-api/common/env"
 )
 
 const (

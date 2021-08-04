@@ -4,9 +4,6 @@ go 1.16
 
 require (
 	cloud.google.com/go/pubsub v1.10.3 // indirect
-	gitee.com/cristiane/micro-mall-users v1.0.1
-	gitee.com/kelvins-io/common v1.0.4
-	gitee.com/kelvins-io/kelvins v1.2.8
 	github.com/RichardKnop/machinery v1.10.5
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1069
@@ -15,11 +12,11 @@ require (
 	github.com/antihax/optional v1.0.0 // indirect
 	github.com/astaxie/beego v1.12.3
 	github.com/aws/aws-sdk-go v1.38.36 // indirect
-	github.com/bluele/gcache v0.0.2 // indirect
+	github.com/bluele/gcache v0.0.2
 	github.com/bufbuild/buf v0.37.0 // indirect
 	github.com/cloudflare/tableflip v1.2.2
 	github.com/coocood/freecache v1.1.1
-	github.com/coreos/etcd v3.3.25+incompatible // indirect
+	github.com/coreos/etcd v3.3.25+incompatible
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/elastic/go-sysinfo v1.7.0 // indirect
@@ -41,7 +38,7 @@ require (
 	github.com/golang/mock v1.5.0
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gomodule/redigo v2.0.0+incompatible
-	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0 // indirect
+	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.5.0
 	github.com/hashicorp/go-multierror v1.1.1 // indirect

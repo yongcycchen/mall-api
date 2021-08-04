@@ -3,7 +3,7 @@ package util
 import (
 	"context"
 
-	"gitee.com/kelvins-io/kelvins/util/client_conn"
+	"github.com/yongcycchen/mall-api/pkg/util/client_conn"
 	"google.golang.org/grpc"
 )
 
